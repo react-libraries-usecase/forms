@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 
 import HookForm from './../src';
 
-storiesOf('React-Hook-Form', module)
+storiesOf('Redux-Form', module)
     .add(
         'default',
         () => <HookForm />

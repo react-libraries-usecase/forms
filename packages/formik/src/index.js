@@ -1,9 +1,9 @@
 import React from "react";
-import Formik from "./Formik";
+import Basic from "./Basic";
 
 // usage of component
 const usage = () => (
-    <Formik />
+    <Basic />
 );
 
 export default usage;

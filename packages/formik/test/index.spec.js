@@ -2,11 +2,11 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import Button from './../src/Formik';
+import Basic from './../src/';
 
-describe('Button', () => {
+describe('Basic', () => {
     test('renders correctly', () => {
-        const tree = renderer.create(<Button>{'Test'}</Button>).toJSON();
+        const tree = renderer.create(<Basic />).toJSON();
         expect(tree).toMatchSnapshot();
     });
 });

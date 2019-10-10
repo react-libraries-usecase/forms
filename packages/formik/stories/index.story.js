@@ -1,10 +1,18 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 
-import Formik from './../src';
+import Basic from './../src/Basic';
+import ReducedOne from './../src/ReducedOne';
+import WithYup from './../src/WithYup';
 
-storiesOf('React-Hook-Form', module)
+storiesOf('Formik', module)
     .add(
-        'default',
-        () => <Formik />
+        'basic',
+        () => <Basic />
+    )
+    .add('ReducedOne',
+        () => <ReducedOne />
+    )
+    .add('WithYup',
+        () => <WithYup />
     );

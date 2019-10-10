@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 
 import Formsy from './../src';
 
-storiesOf('React-Hook-Form', module)
+storiesOf('Formsy', module)
     .add(
         'default',
         () => <Formsy />
