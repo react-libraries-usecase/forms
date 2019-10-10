@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-const Button = styled.button`
+const Formsy = styled.button`
     background: red;
     color: #fff;
     border-radius: 4px;
@@ -11,4 +11,4 @@ const Button = styled.button`
     padding: 9px 36px;
 `;
 
-export default Button;
+export default Formsy;

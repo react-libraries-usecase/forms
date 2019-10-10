@@ -1,10 +1,10 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 
-import Button from './Button';
+import HookForm from './../src';
 
-storiesOf('Button', module)
+storiesOf('React-Hook-Form', module)
     .add(
         'default',
-        () => <Button>{'Button'}</Button>
+        () => <HookForm />
     );
