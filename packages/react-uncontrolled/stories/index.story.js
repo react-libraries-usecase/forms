@@ -1,10 +1,10 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 
-import HookForm from './../src';
+import UnControlledForm from './../src/UnControlledForm';
 
 storiesOf('React-UnControlled', module)
     .add(
         'default',
-        () => <HookForm />
+        () => <UnControlledForm />
     );

@@ -2,11 +2,11 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import Button from './../src/HookForm';
+import UnControlledForm from './../src/UnControlledForm';
 
-describe('Button', () => {
+describe('UnControlledForm', () => {
     test('renders correctly', () => {
-        const tree = renderer.create(<Button>{'Test'}</Button>).toJSON();
+        const tree = renderer.create(<UnControlledForm />).toJSON();
         expect(tree).toMatchSnapshot();
     });
 });

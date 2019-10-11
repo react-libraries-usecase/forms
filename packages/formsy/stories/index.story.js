@@ -1,10 +1,10 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 
-import Formsy from './../src';
+import MyForm from './../src/Formsy';
 
 storiesOf('Formsy', module)
     .add(
         'default',
-        () => <Formsy />
+        () => <MyForm />
     );
