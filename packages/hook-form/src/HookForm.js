@@ -1,14 +1,37 @@
+import React from "react";
+import useForm from "react-hook-form";
 
-import styled from 'styled-components';
+const HookForm = () => {
+    const { handleSubmit, register, errors } = useForm();
+    const onSubmit = values => {
+        console.log(values);
+    };
 
-const HookForm = styled.button`
-    background: red;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 300;
-    padding: 9px 36px;
-`;
+    return (
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <input
+                name="email"
+                ref={register({
+                    required: 'Required',
+                    pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                        message: "invalid email address"
+                    }
+                })}
+            />
+            {errors.email && errors.email.message}
+
+            <input
+                name="username"
+                ref={register({
+                    validate: value => value === "admin" || "Nice try!"
+                })}
+            />
+            {errors.username && errors.username.message}
+
+            <button type="submit">Submit</button>
+        </form>
+    );
+};
 
 export default HookForm;
