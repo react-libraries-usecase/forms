@@ -10,6 +10,7 @@
     "bootstrap": "lerna bootstrap --use-workspaces",
     "bootstrap:2": "lerna exec npm install",
     "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.story.js,**/*.spec.js",
+    "build-storybook": "build-storybook -c .storybook -o public",
     "coverage": "jest --coverage",
     "unit": "jest"
   },

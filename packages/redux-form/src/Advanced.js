@@ -98,4 +98,4 @@ const AdvancedForm = props => {
 
 export default withRedux(reduxForm({
   form: 'simple' // a unique identifier for this form
-})(AdvancedForm))
+})(AdvancedForm));

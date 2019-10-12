@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ lazy , Suspense } from 'react';
 import {storiesOf} from '@storybook/react';
 
 import HookForm from './../src/HookForm';
@@ -6,5 +6,12 @@ import HookForm from './../src/HookForm';
 storiesOf('React-Hook-Form', module)
     .add(
         'default',
-        () => <HookForm />
+        () => {
+            const HookForm = lazy(() => import('./../src/HookForm'));
+            return(
+                <Suspense fallback={<div>Loading...</div>}>
+                    <HookForm />
+                </Suspense>
+            );
+        }
     );

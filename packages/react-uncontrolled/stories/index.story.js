@@ -1,35 +1,71 @@
-import React from 'react';
+import React,{ lazy , Suspense } from 'react';
 import {storiesOf} from '@storybook/react';
 
-import BasicForm from './../src/Basic';
-import AdvancedForm from './../src/Advanced';
-import LoginForm from './../src/Login';
-import TabbedForms from './../src/Tabbed';
-import UploadForm from './../src/Upload';
-import WizardForm from './../src/Wizard';
 
 storiesOf('React-UnControlled', module)
     .add(
         'Basic',
-        () => <BasicForm />
+        () => {
+            const BasicForm = lazy(() => import('./../src/Basic'));
+            return(
+                <Suspense fallback={<div>Loading...</div>}>
+                    <BasicForm />
+                </Suspense>
+            );
+        }
     )
     .add(
         'Login',
-        () => <LoginForm />
+        () => {
+            const LoginForm = lazy(() => import('./../src/Login'));
+            return(
+                <Suspense fallback={<div>Loading...</div>}>
+                    <LoginForm />
+                </Suspense>
+            );
+        }
     )
     .add(
         'Advanced',
-        () => <AdvancedForm />
+        () => {
+            const AdvancedForm = lazy(() => import('./../src/Advanced'));
+            return(
+                <Suspense fallback={<div>Loading...</div>}>
+                    <AdvancedForm />
+                </Suspense>
+            );
+        }
     )
     .add(
         'Tabbed',
-        () => <TabbedForms />
+        () => {
+            const TabbedForms = lazy(() => import('./../src/Tabbed'));
+            return(
+                <Suspense fallback={<div>Loading...</div>}>
+                    <TabbedForms />
+                </Suspense>
+            );
+        }
     )
     .add(
         'Upload',
-        () => <UploadForm />
+        () => {
+            const UploadForm = lazy(() => import('./../src/Upload'));
+            return(
+                <Suspense fallback={<div>Loading...</div>}>
+                    <UploadForm />
+                </Suspense>
+            );
+        }
     )
     .add(
         'Wizard',
-        () => <WizardForm />
+        () => {
+            const WizardForm = lazy(() => import('./../src/Wizard'));
+            return(
+                <Suspense fallback={<div>Loading...</div>}>
+                    <WizardForm />
+                </Suspense>
+            );
+        }
     );
