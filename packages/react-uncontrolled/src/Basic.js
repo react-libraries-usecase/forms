@@ -1,13 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 const BasicForm = () => {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState("");
 
-    const handleChange = (event) => {
-        setValue( event.target.value);
+    const handleChange = event => {
+        setValue(event.target.value);
     };
-    const handleSubmit = (event) => {
-        alert('A name was submitted: ' + value);
+    const handleSubmit = event => {
+        alert("A name was submitted: " + value);
         event.preventDefault();
     };
 
@@ -17,7 +17,8 @@ const BasicForm = () => {
                 Name:
                 <input
                     defaultValue="Bob"
-                    type="text" value={value}
+                    type="text"
+                    value={value}
                     onChange={handleChange}
                 />
             </label>
@@ -25,6 +26,5 @@ const BasicForm = () => {
         </form>
     );
 };
-
 
 export default BasicForm;

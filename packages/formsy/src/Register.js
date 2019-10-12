@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
-import Formsy, { addValidationRule } from 'formsy-react';
+import React, { Component } from "react";
+import Formsy, { addValidationRule } from "formsy-react";
 import { withFormsy } from "formsy-react";
 
-addValidationRule('isName', (values, value) => {
-    return value !== '' && !['god', 'hello world'].includes(value);
+addValidationRule("isName", (values, value) => {
+    return value !== "" && !["god", "hello world"].includes(value);
 });
 
-addValidationRule('isNotPet', (values, value) => {
-    return !['Kitty', 'Pusheen'].includes(value);
+addValidationRule("isNotPet", (values, value) => {
+    return !["Kitty", "Pusheen"].includes(value);
 });
-
 
 class MyInput extends Component {
     constructor(props) {
@@ -73,7 +72,9 @@ class MyInput extends Component {
                         value={curValue}
                         onChange={this.changeValue}
                         onBlur={() => {
-                            this.props.setValue((curValue || initialValue).trim());
+                            this.props.setValue(
+                                (curValue || initialValue).trim()
+                            );
                         }}
                     />
                     &nbsp;
@@ -85,15 +86,14 @@ class MyInput extends Component {
     }
 }
 
-
 class Register extends Component {
     constructor(props) {
         super(props);
 
         this.state = { canSubmit: false };
         this.initialValues = {
-            name: 'Jack',
-            email: 'test@sample.com'
+            name: "Jack",
+            email: "test@sample.com"
         };
         this.errors = {};
         this.dirty = {};
@@ -147,9 +147,9 @@ class Register extends Component {
                                 minLength: 3
                             }}
                             validationErrors={{
-                                isName: 'This is not a valid name.',
-                                isNotPet: 'Cannot use a pet name.',
-                                minLength: 'Must more than three characters.'
+                                isName: "This is not a valid name.",
+                                isNotPet: "Cannot use a pet name.",
+                                minLength: "Must more than three characters."
                             }}
                             initialValue={this.initialValues.name}
                             errors={this.errors}
@@ -166,7 +166,7 @@ class Register extends Component {
                                 isEmail: true
                             }}
                             validationErrors={{
-                                isEmail: 'Illegal email address.'
+                                isEmail: "Illegal email address."
                             }}
                             initialValue={this.initialValues.email}
                             errors={this.errors}
@@ -179,8 +179,9 @@ class Register extends Component {
                     <button
                         type="submit"
                         disabled={
-                            Object.values(this.errors).filter(item => item !== null).length >
-                            0
+                            Object.values(this.errors).filter(
+                                item => item !== null
+                            ).length > 0
                         }
                     >
                         Submit
@@ -191,17 +192,28 @@ class Register extends Component {
                     <hr />
                     <ul>
                         <li>
-                            errors: {JSON.stringify(this.errors)}, count:{' '}
-                            {Object.values(this.errors).filter(item => item !== null).length}
+                            errors: {JSON.stringify(this.errors)}, count:{" "}
+                            {
+                                Object.values(this.errors).filter(
+                                    item => item !== null
+                                ).length
+                            }
                         </li>
                         {/*<<li>isValid: {JSON.stringify(this.state.canSubmit)}</li>*/}
                         <li>
-                            dirty: {JSON.stringify(this.dirty)}, count:{' '}
-                            {Object.values(this.dirty).filter(item => item !== null).length}
+                            dirty: {JSON.stringify(this.dirty)}, count:{" "}
+                            {
+                                Object.values(this.dirty).filter(
+                                    item => item !== null
+                                ).length
+                            }
                         </li>
                         <li>
-                            touched: {JSON.stringify(this.touched)}, count:{' '}
-                            {Object.values(this.touched).filter(item => item).length}
+                            touched: {JSON.stringify(this.touched)}, count:{" "}
+                            {
+                                Object.values(this.touched).filter(item => item)
+                                    .length
+                            }
                         </li>
                     </ul>
                 </Formsy>

@@ -1,6 +1,6 @@
 // MyInput.js
-import Formsy , { withFormsy } from 'formsy-react';
-import React from 'react';
+import Formsy, { withFormsy } from "formsy-react";
+import React from "react";
 
 class MyInput extends React.Component {
     constructor(props) {
@@ -22,7 +22,12 @@ class MyInput extends React.Component {
 
         return (
             <div>
-                <input name={'test'} onChange={this.changeValue} type="text" value={this.props.getValue() || ''} />
+                <input
+                    name={"test"}
+                    onChange={this.changeValue}
+                    type="text"
+                    value={this.props.getValue() || ""}
+                />
                 <span>{errorMessage}</span>
             </div>
         );
@@ -31,15 +36,12 @@ class MyInput extends React.Component {
 
 const Input = withFormsy(MyInput);
 
-
 class MyForm extends React.Component {
     componentDidMount() {}
     render() {
         return (
             <Formsy>
-                <Input
-                    name="search"
-                />
+                <Input name="search" />
             </Formsy>
         );
     }

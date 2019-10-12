@@ -12,7 +12,14 @@
     "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.story.js,**/*.spec.js",
     "build-storybook": "build-storybook -c .storybook -o public",
     "coverage": "jest --coverage",
-    "unit": "jest"
+    "unit": "jest",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:css": "stylelint packages/**/*.js",
+    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts",
+    "lint:eslint:fix": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --fix",
+    "lint:js": "npm run lint:eslint -- . ",
+    "lint:staged": "lint-staged",
+    "prettify": "prettier --write packages/**/*.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.3",
@@ -35,5 +42,16 @@
     "react-test-renderer": "^16.10.2",
     "styled-components": "^4.4.0",
     "webpack": "^4.41.0"
+  },
+  "dependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.5.1",
+    "eslint-config-adpyke-es6": "^1.4.12",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "prettier": "^1.18.2"
   }
 }

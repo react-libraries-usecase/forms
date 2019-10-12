@@ -1,5 +1,4 @@
-import React, {useRef, useState} from "react";
-
+import React, { useRef, useState } from "react";
 
 const useForceUpdate = () => useState()[1];
 
@@ -8,19 +7,17 @@ const AdvancedForm = () => {
     const fileUploadRef = useRef(null);
     const forceUpdate = useForceUpdate();
 
-    const handleChange = (event) => {
-        const {name, value} =  event.target;
-        console.log({name , value});
+    const handleChange = event => {
+        const { name, value } = event.target;
+        console.log({ name, value });
         data[name] = value;
         setData(data);
     };
 
-    const handleSubmit = (event) => {
-        alert('A name was submitted: ' + JSON.stringify(data));
+    const handleSubmit = event => {
+        alert("A name was submitted: " + JSON.stringify(data));
         event.preventDefault();
     };
-
-
 
     function fileNames() {
         const { current } = fileUploadRef;
@@ -34,7 +31,6 @@ const AdvancedForm = () => {
         }
         return null;
     }
-
 
     // const UploadChanged = () => {
     //
@@ -61,25 +57,25 @@ const AdvancedForm = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className={'formRow'}>
+            <div className={"formRow"}>
                 <label>
                     Name:
                     <input
                         defaultValue="Bob"
                         type="text"
-                        name={'name'}
-                        value={data['name']}
+                        name={"name"}
+                        value={data["name"]}
                         onChange={handleChange}
                     />
                 </label>
             </div>
-            <div className={'formRow'}>
+            <div className={"formRow"}>
                 Are you here :
                 <label>
                     Yeah
                     <input
                         defaultChecked="true"
-                        name={'hereStatus'}
+                        name={"hereStatus"}
                         type="radio"
                         value={0}
                         onChange={handleChange}
@@ -90,19 +86,19 @@ const AdvancedForm = () => {
                     <input
                         defaultChecked="false"
                         type="radio"
-                        name={'hereStatus'}
+                        name={"hereStatus"}
                         value={1}
                         onChange={handleChange}
                     />
                 </label>
             </div>
-            <div className={'formRow'}>
+            <div className={"formRow"}>
                 <label>
                     Active :
                     <input
                         defaultChecked="true"
                         type="checkbox"
-                        name={'activeStatus'}
+                        name={"activeStatus"}
                         value={1}
                         onChange={handleChange}
                     />
@@ -110,21 +106,19 @@ const AdvancedForm = () => {
             </div>
             <label>
                 Upload file/s:
-                { fileNames() }
-
+                {fileNames()}
                 <input
                     onChange={forceUpdate}
                     type="file"
                     multiple="multiple"
-                    ref={fileUploadRef} />
+                    ref={fileUploadRef}
+                />
             </label>
             <div className="formRow">
                 <input type="submit" value="Submit" />
             </div>
-
         </form>
     );
 };
-
 
 export default AdvancedForm;

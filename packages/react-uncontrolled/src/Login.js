@@ -1,17 +1,14 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 const MyForm = () => {
+    const [value, setValue] = useState("");
 
-    const [value, setValue] = useState('');
-
-
-
-    const handleChange = (event) => {
-        setValue( event.target.value);
+    const handleChange = event => {
+        setValue(event.target.value);
     };
 
-    const handleSubmit = (event) => {
-        alert('A name was submitted: ' + value);
+    const handleSubmit = event => {
+        alert("A name was submitted: " + value);
         event.preventDefault();
     };
 
@@ -25,6 +22,5 @@ const MyForm = () => {
         </form>
     );
 };
-
 
 export default MyForm;

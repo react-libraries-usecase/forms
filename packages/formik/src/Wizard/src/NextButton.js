@@ -1,5 +1,5 @@
 const NextButton = () => null;
 
-NextButton.displayName = 'NextButton';
+NextButton.displayName = "NextButton";
 
 export default NextButton;

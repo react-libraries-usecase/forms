@@ -1,11 +1,11 @@
 import React from "react";
 import { Formik } from "formik";
-import * as Yup from 'yup';
+import * as Yup from "yup";
 
 export default () => (
     <div className="app">
         <Formik
-            initialValues={{ email: '' }}
+            initialValues={{ email: "" }}
             onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
                     alert(JSON.stringify(values, null, 2));
@@ -15,7 +15,7 @@ export default () => (
             validationSchema={Yup.object().shape({
                 email: Yup.string()
                     .email()
-                    .required('Required'),
+                    .required("Required")
             })}
         >
             {props => {
@@ -28,11 +28,11 @@ export default () => (
                     handleChange,
                     handleBlur,
                     handleSubmit,
-                    handleReset,
+                    handleReset
                 } = props;
                 return (
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="email" style={{ display: 'block' }}>
+                        <label htmlFor="email" style={{ display: "block" }}>
                             Email
                         </label>
                         <input
@@ -43,7 +43,9 @@ export default () => (
                             onChange={handleChange}
                             onBlur={handleBlur}
                             className={
-                                errors.email && touched.email ? 'text-input error' : 'text-input'
+                                errors.email && touched.email
+                                    ? "text-input error"
+                                    : "text-input"
                             }
                         />
                         {errors.email && touched.email && (
@@ -62,17 +64,17 @@ export default () => (
                             Submit
                         </button>
 
-                        <div style={{ margin: '1rem 0' }}>
-                            <h3 style={{ fontFamily: 'monospace' }} />
+                        <div style={{ margin: "1rem 0" }}>
+                            <h3 style={{ fontFamily: "monospace" }} />
                             <pre
                                 style={{
-                                    background: '#f6f8fa',
-                                    fontSize: '.65rem',
-                                    padding: '.5rem',
+                                    background: "#f6f8fa",
+                                    fontSize: ".65rem",
+                                    padding: ".5rem"
                                 }}
                             >
-                              <strong>props</strong> ={' '}
-                              {JSON.stringify(props, null, 2)}
+                                <strong>props</strong> ={" "}
+                                {JSON.stringify(props, null, 2)}
                             </pre>
                         </div>
                     </form>

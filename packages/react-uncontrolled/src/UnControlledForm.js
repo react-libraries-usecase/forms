@@ -3,8 +3,8 @@ import React from "react";
 const UnControlledForm = () => {
     const inputRef = React.createRef();
 
-    const handleSubmit = (event) => {
-        alert('A name was submitted: ' + this.input.current.value);
+    const handleSubmit = event => {
+        alert("A name was submitted: " + this.input.current.value);
         event.preventDefault();
     };
 

@@ -9,12 +9,12 @@ import WizardForm from "./WizardForm";
 const rootEl = document.getElementById("root");
 
 ReactDOM.render(
-  <Provider store={store}>
-    <div style={{ padding: 15 }}>
-      <h2>Wizard Example</h2>
-      <WizardForm onSubmit={showResults} />
-      <Values form="wizard" />
-    </div>
-  </Provider>,
-  rootEl
+    <Provider store={store}>
+        <div style={{ padding: 15 }}>
+            <h2>Wizard Example</h2>
+            <WizardForm onSubmit={showResults} />
+            <Values form="wizard" />
+        </div>
+    </Provider>,
+    rootEl
 );
