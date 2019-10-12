@@ -2,7 +2,7 @@ import React,{ lazy , Suspense } from 'react';
 import {storiesOf} from '@storybook/react';
 
 
-storiesOf('React-UnControlled', module)
+storiesOf('React-Controlled', module)
     .add(
         'Basic',
         () => {

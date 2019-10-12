@@ -4,10 +4,6 @@ import withRedux from './withRedux'
 
 
 class FieldFileInput  extends Component{
-  constructor(props) {
-    super(props)
-    this.onChange = this.onChange.bind(this)
-  }
 
   onChange(e) {
     const { input: { onChange } } = this.props
@@ -24,7 +20,7 @@ class FieldFileInput  extends Component{
          <input
           type='file'
           accept='.jpg, .png, .jpeg'
-          onChange={this.onChange}
+          onChange={() => this.onChange}
          />
        </div>
      </div>
@@ -39,7 +35,7 @@ const submitVVV = (data) => {
 const UploadForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={submitVVV}>
       <div>
         <label htmlFor="employed">Upload file:</label>
         <div>
