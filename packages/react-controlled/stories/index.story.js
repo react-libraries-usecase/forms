@@ -14,10 +14,6 @@ storiesOf('React-Controlled', module)
         () => <BasicForm />
     )
     .add(
-        'Login',
-        () => <LoginForm />
-    )
-    .add(
         'Advanced',
         () => <AdvancedForm />
     )
@@ -32,4 +28,21 @@ storiesOf('React-Controlled', module)
     .add(
         'Wizard',
         () => <WizardForm />
+    )
+
+    .add(
+        's-Login',
+        () => <LoginForm />
+    )
+    .add(
+        's-Register',
+        () => <LoginForm />
+    )
+    .add(
+        's-Post',
+        () => <LoginForm />
+    )
+    .add(
+        's-Contact',
+        () => <LoginForm />
     );
