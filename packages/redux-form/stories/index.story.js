@@ -1,10 +1,15 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 
-import Usage from './../src';
+import ContactForm from './../src/ContactForm';
+import Advanced from './../src/Advanced';
 
 storiesOf('Redux-Form', module)
     .add(
-        'default',
-        () => <Usage />
+        'ContactForm',
+        () => <ContactForm />
+    )
+    .add(
+        'Advanced',
+        () => <Advanced />
     );

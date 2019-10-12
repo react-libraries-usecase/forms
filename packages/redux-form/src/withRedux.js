@@ -5,21 +5,6 @@ import { Provider } from 'react-redux'
 import { reducer as formReducer } from 'redux-form'
 
 
-import ContactForm from './ContactForm'
-
-class ContactPage extends React.Component {
-  submit = values => {
-    // print the form values to the console
-    console.log(values)
-  }
-  render() {
-    return <ContactForm onSubmit={this.submit} />
-  }
-}
-
-
-
-
 const rootReducer = combineReducers({
   // ...your other reducers here
   // you have to pass formReducer under 'form' key,
@@ -31,12 +16,11 @@ const store = createStore(rootReducer)
 
 
 // usage of component
-const usage = () => (
-	<Provider store={store}>
-    <ContactPage />
-  </Provider>
-);
+const withRedux = (Component) => (props) => {
+  return <Provider store={store}>
+    <Component {...props} />
+  </Provider>;
+};
 
 
-export default usage;
-
+export default withRedux;
