@@ -1,5 +1,5 @@
 const SubmitButton = () => null;
 
-SubmitButton.displayName = "SubmitButton";
+SubmitButton.displayName = 'SubmitButton';
 
 export default SubmitButton;
