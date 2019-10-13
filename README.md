@@ -9,4 +9,4 @@
 
 In this repo we will add popular ways to create forms, and gonna provide an example to every single usage.
 
-Demo at : https://forms-c7rjvhz8s.now.sh
+Demo at : https://forms.sayjeyhi.now.sh
