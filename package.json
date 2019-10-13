@@ -40,9 +40,7 @@
     "react-dom": "^16.10.2",
     "react-test-renderer": "^16.10.2",
     "styled-components": "^4.4.0",
-    "webpack": "^4.41.0"
-  },
-  "dependencies": {
+    "webpack": "^4.41.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
     "eslint-config-adpyke-es6": "^1.4.12",
@@ -53,5 +51,5 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.16.0",
     "prettier": "^1.18.2"
-  }
+  },
 }
